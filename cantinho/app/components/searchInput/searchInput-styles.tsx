@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
         borderRadius: 25,
         paddingHorizontal: 20,
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
     },
 
     textInput: {
@@ -31,7 +31,6 @@ export const styles = StyleSheet.create({
 
     searchIcon: {
         padding: 10,
-        height: '100%'
     },
 
     filterView: {

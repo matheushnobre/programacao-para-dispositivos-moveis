@@ -4,9 +4,10 @@ import { useState } from "react";
 
 interface FilterProps {
     filterName: string;
+    key: number;
 }
 
-export default function Filter({filterName}: FilterProps){
+export default function Filter({filterName, key}: FilterProps){
     
     const [marked, setMarked] = useState(false);
     

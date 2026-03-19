@@ -31,7 +31,7 @@ export default function SearchInput(){
 
             <View style={styles.filterView}>
                 {filters.map((filter, index) => (
-                    <Filter filterName={filter} />
+                    <Filter key={index} filterName={filter} />
                 ))}
             </View>
         </View>
