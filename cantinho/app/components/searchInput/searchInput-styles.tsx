@@ -32,5 +32,13 @@ export const styles = StyleSheet.create({
     searchIcon: {
         padding: 10,
         height: '100%'
+    },
+
+    filterView: {
+        marginTop: 10,
+        width: '87%',
+        gap: 1,
+        flexDirection: 'row',
+        flexWrap: 'wrap',
     }
 });

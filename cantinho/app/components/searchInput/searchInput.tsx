@@ -2,6 +2,9 @@ import { View, TextInput, TouchableOpacity } from "react-native";
 import { useState } from "react";
 import { styles } from "./searchInput-styles";
 import { Ionicons } from '@expo/vector-icons'; 
+import Filter from "../filter/filter";
+
+const filters = ['Matemática', 'Português', 'Ciências', 'História', 'Geografia', 'Artes', 'Ed. Física', 'Ensino Religioso', 'Pré-Escola', 'Fundamental I', 'Fundamental II',];
 
 export default function SearchInput(){
     const [text, setText] = useState('');
@@ -24,6 +27,12 @@ export default function SearchInput(){
                         color="#473469" 
                     />
                 </TouchableOpacity>
+            </View>
+
+            <View style={styles.filterView}>
+                {filters.map((filter, index) => (
+                    <Filter filterName={filter} />
+                ))}
             </View>
         </View>
     );
