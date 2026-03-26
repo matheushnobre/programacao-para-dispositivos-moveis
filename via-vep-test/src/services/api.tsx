@@ -12,6 +12,10 @@ const validateCep = (cep: string) => {
 
 
 export const getCep = async (cep: string) => {
+    if(cep.length == 0){
+        throw new Error("CEP é obrigatório.")
+    }
+
     if(!validateCep(cep)) {
         throw new Error("CEP inválido. O formato esperado é 00000-000.");
     }

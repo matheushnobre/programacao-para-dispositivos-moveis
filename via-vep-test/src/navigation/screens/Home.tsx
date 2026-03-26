@@ -42,69 +42,71 @@ export function Home() {
   return (
     <View style={styles.container}>
       <View style={styles.input}>
-        <Text>CEP: </Text>
+        <Text style={styles.label}>CEP: </Text>
         <TextInput
           value={cep}
           onChangeText={setCep}
           onBlur={handleSearch}
           placeholder="00000-000"
-          placeholderTextColor="#a9a6a6"
+          placeholderTextColor="#959595"
           style = {styles.textInput}
         />
       </View>
 
+      {error ? <Text style={styles.error}>{error}</Text> : null}
+
       <View style={styles.input}>
-        <Text>Rua: </Text>
+        <Text style={styles.label}>Rua: </Text>
         <TextInput
           value={address?.logradouro || ''}
           editable={false}
           placeholder="Rua X"
-          placeholderTextColor="#a9a6a6"
+          placeholderTextColor="#959595"
           style = {styles.textInput}
         />
       </View>
 
       <View style={styles.input}>
-        <Text>Número: </Text>
+        <Text style={styles.label}>Número: </Text>
         <TextInput
           value={numero}
           onChangeText={setNumero}
           editable={true}
           placeholder="1234"
-          placeholderTextColor="#a9a6a6"
+          placeholderTextColor="#959595"
           style = {styles.textInput}
         />
       </View>
 
       <View style={styles.input}>
-        <Text>Bairro: </Text>
+        <Text style={styles.label}>Bairro: </Text>
         <TextInput
           value={address?.bairro || ''}
           editable={false}
           placeholder="Bairro Y"
-          placeholderTextColor="#a9a6a6"
+          placeholderTextColor="#959595"
           style = {styles.textInput}
         />
       </View>
 
       <View style={styles.input}>
-        <Text>Cidade: </Text>
+        <Text style={styles.label}>Cidade: </Text>
         <TextInput
           value={address?.localidade || ''}
           editable={false}
           placeholder="Cidade Z"
-          placeholderTextColor="#a9a6a6"
+          placeholderTextColor="#959595"
           style = {styles.textInput}
         />
       </View>
 
       <View style={styles.input}>
-        <Text>UF: </Text>
+        <Text style={styles.label}>UF: </Text>
         <TextInput
           value={address?.uf || ''}
           editable={false}
           placeholder="UF"
-          placeholderTextColor="#a9a6a6"
+          placeholderTextColor="#959595"
           style = {styles.textInput}
         />
       </View>
@@ -117,16 +119,21 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-    gap: 10,
+    alignItems: 'stretch',
+    gap: 20,
   },
 
   textInput: {
     borderWidth: 1,
     borderColor: "#ffffff",
-    borderRadius: 20,
+    borderRadius: 10,
     padding: 10,
-    color: "#ffffff"
+    color: "#ffffff",
+  },
+
+  label: {
+    width: 70,
+    textAlign: 'right'
   },
 
   input: {
@@ -134,5 +141,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     gap: 12,
+  },
+
+  error: {
+    color: '#d90909',
+    textAlign: 'center',
+    marginTop: -10,
   },
 });
