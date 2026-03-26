@@ -3,6 +3,9 @@ import { useState } from 'react';
 import { TextInput } from 'react-native';
 import { StyleSheet, View } from 'react-native';
 import { getCep } from '../../services/api';
+import { Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get("window");
 
 interface Address {
   logradouro: string;
@@ -119,8 +122,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'stretch',
-    gap: 20,
+    alignItems: 'center',
+    gap: 0.03 * height,
   },
 
   textInput: {
@@ -129,10 +132,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 10,
     color: "#ffffff",
+    width: "100%",
+    height: 50
   },
 
   label: {
-    width: 70,
+    width: 60,
     textAlign: 'right'
   },
 
@@ -141,6 +146,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     gap: 12,
+    width: "90%",
   },
 
   error: {
